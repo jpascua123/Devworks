@@ -21,6 +21,17 @@
       border: 1px solid #30363d;
       color: #fff;
     }
+    #proxybox {
+      display: none;
+      margin-top: 30px;
+      border: 1px solid #30363d;
+      width: 90%;
+      height: 500px;
+      background: #161b22;
+      color: #58a6ff;
+      text-align: center;
+      padding-top: 200px;
+    }
   </style>
 </head>
 <body>
@@ -29,11 +40,21 @@
   <input id="code" type="password" placeholder="Access Code">
   <button onclick="redirect()">Login</button>
 
+  <div id="proxybox">🔄 Loading secure tools...</div>
+
   <script>
     function redirect() {
       const input = document.getElementById('code').value;
       if (input === 'access123') {
-        window.location.href = "https://www.croxyproxy.com/";
+        document.querySelector('input').style.display = 'none';
+        document.querySelector('button').style.display = 'none';
+        document.querySelector('p').style.display = 'none';
+        document.getElementById('proxybox').style.display = 'block';
+
+        // Delayed redirect
+        setTimeout(() => {
+          window.location.href = "https://www.croxyproxy.com/";
+        }, 2000);
       } else {
         alert("Incorrect code.");
       }
