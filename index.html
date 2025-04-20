@@ -2,50 +2,40 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Dev Dashboard</title>
+  <title>Internal Portal</title>
   <style>
     body {
       background: #0d1117;
       color: #c9d1d9;
       font-family: monospace;
-      text-align: center;
-      padding-top: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
     }
     input, button {
       padding: 10px;
+      margin: 5px;
       background: #161b22;
-      color: #c9d1d9;
       border: 1px solid #30363d;
-      font-family: monospace;
-    }
-    iframe {
-      width: 95%;
-      height: 90vh;
-      border: none;
-      margin-top: 20px;
+      color: #fff;
     }
   </style>
 </head>
 <body>
-  <h1>DevOps Tool Portal</h1>
-  <p>Enter Access Code to continue:</p>
-  <input id="access" type="password" placeholder="••••••••" />
-  <button onclick="unlock()">Login</button>
-
-  <div id="proxyContainer" style="display: none;">
-    <iframe src="https://www.croxyproxy.com/" loading="lazy"></iframe>
-  </div>
+  <h1>DevOps Utility Console</h1>
+  <p>Enter Access Code</p>
+  <input id="code" type="password" placeholder="Access Code">
+  <button onclick="redirect()">Login</button>
 
   <script>
-    function unlock() {
-      const input = document.getElementById('access').value;
+    function redirect() {
+      const input = document.getElementById('code').value;
       if (input === 'access123') {
-        document.querySelector('input').style.display = 'none';
-        document.querySelector('button').style.display = 'none';
-        document.querySelector('p').innerText = 'Loading Tools...';
-        document.getElementById('proxyContainer').style.display = 'block';
+        window.location.href = "https://www.croxyproxy.com/";
       } else {
-        alert('Wrong code.');
+        alert("Incorrect code.");
       }
     }
   </script>
