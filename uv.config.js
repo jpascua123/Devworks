@@ -1,6 +1,6 @@
 self.__uv$config = {
   prefix: '/service/',
-  bare: 'https://ultraviolet.pages.dev/',
-  encodeUrl: Ultraviolet.codec.xor.encode,
-  decodeUrl: Ultraviolet.codec.xor.decode,
+  bare: 'https://uv.bypass.workers.dev/',
+  encodeUrl: (input) => btoa(input),
+  decodeUrl: (input) => atob(input),
 };
