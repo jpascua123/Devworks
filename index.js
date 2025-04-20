@@ -3,9 +3,9 @@ const input = document.getElementById('uv-search-engine');
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
-  let url = input.value;
+  let url = input.value.trim();
   if (!url.startsWith('http')) url = 'https://' + url;
-  
-  // send directly to bypass backend
-  location.href = 'https://uv.bypass.workers.dev/' + btoa(url);
+
+  // THIS IS THE FIX: Send to public proxy directly
+  window.location.href = 'https://uv.bypass.workers.dev/' + btoa(url);
 });
