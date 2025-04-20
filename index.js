@@ -7,5 +7,5 @@ form.addEventListener('submit', async (event) => {
   if (!url.startsWith('http')) url = 'https://' + url;
 
   // THIS IS THE FIX: Send to public proxy directly
-  window.location.href = 'https://uv.bypass.workers.dev/' + btoa(url);
+ window.location.href = 'https://uv.titaniumnetwork.org/' + btoa(url);
 });
